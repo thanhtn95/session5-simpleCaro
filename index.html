@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="startB();showB()">
+<table cellpadding="2px" id="tbl"></table>
+<button onclick="ChangeB()" style="margin: auto">Change</button>
+</body>
+<script>
+    let a=[];
+    function startB() {
+        for(i=0;i<5;i++){
+            a[i] = new Array(0,0,0,0,0);
+        }
+    }
+    function showB() {
+        let text="";
+        for(i =0;i<5;i++){
+            text+="<tr>";
+            for(j=0;j<5;j++){
+                text+="<td>"+a[i][j]+"&nbsp"+"</td>";
+            }
+            text+="</tr>";
+        }
+        document.getElementById("tbl").innerHTML=text;
+    }
+    function ChangeB() {
+        let position = prompt("Nhap vi tri muon thay doi thanh x:");
+        let pos = position.split("-");
+        a[pos[0]][pos[1]] = "x";
+        showB();
+    }
+
+</script>
+</html>
